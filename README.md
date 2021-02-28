@@ -8,6 +8,6 @@
  <h3>➖ https://moveit2021-eta.vercel.app/  
  <h3>➖ https://moveit2021-anacpbarros.vercel.app/  
   
-<h3>🎯 Próximo passo será permitir que o usuário se logue em um conta própria!  
+<h3>🎯 Próximo passo será permitir que o usuário se logue em um conta própria!  <br />
 
 O move-it foi desenvolvido durante a Next Level Week (NLW) promovida pela Rocketseat.
