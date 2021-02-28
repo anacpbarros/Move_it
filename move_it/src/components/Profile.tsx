@@ -10,9 +10,9 @@ export function Profile () {
 
     return (
         <div className = {styles.profileContainer}>
-            <img src= "https://github.com/anacpbarros.png" alt= "Ana Claudia" />
+            <img src= "icons/user-photo.png" alt= "Usuário" />
             <div>
-                <strong>Ana Claudia</strong>
+                <strong>Usuário</strong>
                 <p>
                     <img src="icons/level.svg" alt="Level" />
                     Level { level }
