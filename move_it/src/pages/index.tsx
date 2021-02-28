@@ -61,9 +61,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   //componente da forma correta, é necessário voltar as props ao seu tipo original.
   return {
     props: {
-      level: Number(level),
-      currentExperience,
-      challengesCompleted
-     }
+      level: Number(level ?? 1),
+      currentExperience: Number(currentExperience ?? 0),
+      challengesCompleted: Number(challengesCompleted ?? 0),
+    }
   }
 }

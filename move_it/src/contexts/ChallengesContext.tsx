@@ -33,9 +33,9 @@ interface ChallengesProviderProps {
 export const ChallengesContext = createContext ({} as ChallengesContextData);
 
 export function ChallengesProvider({ children , ...rest }: ChallengesProviderProps) {
-    const [level, setlevel] = useState(rest.level ?? 1);
-    const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
-    const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
+    const [level, setlevel] = useState(rest.level);
+    const [currentExperience, setCurrentExperience] = useState(rest.currentExperience);
+    const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted);
 
     const [activeChallenge, setActiveChallenge] = useState(null);
     const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
@@ -47,7 +47,7 @@ export function ChallengesProvider({ children , ...rest }: ChallengesProviderPro
     //Permissão de notificação
     useEffect(() => {
         Notification.requestPermission();
-    }, [])
+    }, []);
 
     //pode-se usar .toString() ou String()
     useEffect(() => {
@@ -69,14 +69,14 @@ export function ChallengesProvider({ children , ...rest }: ChallengesProviderPro
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
         const challenge = challenges[randomChallengeIndex];
 
-        setActiveChallenge(challenge)
+        setActiveChallenge(challenge);
 
         new Audio('/notification.mp3').play();
 
-        if (Notification.permission === 'granted') {
+        if (Notification.permission === 'granted' && screen.width > 720) {
             new Notification('Você recebeu um novo desafio 🥳', {
                 body: `Valendo ${challenge.amount} xp!`
-            })
+            });
         }
     }
   
@@ -112,7 +112,7 @@ export function ChallengesProvider({ children , ...rest }: ChallengesProviderPro
                 currentExperience, 
                 challengesCompleted,
                 activeChallenge,
-                experienceToNextLevel, 
+                experienceToNextLevel,
                 levelUp,
                 startNewChallenge,
                 resetChallenge,

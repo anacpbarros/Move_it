@@ -1,5 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
-import { ChallengesContext } from '../contexts/ChallengesContext';
+import { useContext } from 'react';
 import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
 
@@ -11,7 +10,7 @@ export function Countdown () {
         isActive,
         startCountdown,
         resetCountdown,
-    } = useContext(CountdownContext)
+    } = useContext(CountdownContext);
 
 //o padstart permite que se não houver dois numeros (10, 20),
 //coloque outro na frente, no caso será o 0, e depois da o split para que 

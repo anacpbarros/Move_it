@@ -21,7 +21,7 @@ import { ChallengesContext } from "./ChallengesContext";
  export function CountdownProvider({ children }: CountdownProviderProps){
     const { startNewChallenge } = useContext(ChallengesContext);
 
-    const [time, setTime] = useState(25 * 60);
+    const [time, setTime] = useState(25 * 60); 
     const [isActive, setIsActive] = useState (false);
     const [hasFinished, setHasFinished] = useState(false);
 
@@ -38,7 +38,7 @@ import { ChallengesContext } from "./ChallengesContext";
         clearTimeout(countdownTimeout);
         setIsActive(false);
         setHasFinished(false);
-        setTime(0.1*60);
+        setTime(25 * 60); 
     }
 //useEffect é como se fosse um efeito colateral, disparado mediante uma determinada ação
 //recebe dois parâmetros: o que eu quero executar (função), a segunda é quando eu quero executar
